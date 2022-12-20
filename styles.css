@@ -1,0 +1,68 @@
+/*  RESET */
+
+*, *::before, a::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+}
+
+/* UTILITY CLASSES */
+
+.flex {
+    display: flex;
+}
+
+
+/* LEFT SIDE */
+
+.left_side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(./images/side_image.jpg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 40vw;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.45);
+    height: 150px;
+    color: white;
+    position: relative;
+    top: 20vh;
+    font-size: 75px;
+    font-family: 'Skranji', cursive;
+}
+
+.logo > img {
+    height: 125px;
+}
+
+.left_side_footer {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.left_side_footer > a {
+    color: white;
+}
+
+
+/* RIGHT SIDE */
+
+.message {
+    height: 33vh;
+    background-color: rgba(128, 128, 128, 0.11);
+}
