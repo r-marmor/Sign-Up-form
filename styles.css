@@ -122,7 +122,7 @@ button {
 
 input:focus {
     outline: none;
-    border: 3px solid #596D48;
+    border: 3px solid green;
 }
 
 .footer > button:hover {

@@ -46,6 +46,7 @@
                     <div class="input">
                         <label for="email">EMAIL</label>
                         <input type="email" id="email" name="email" required>
+                        <div id="emailError" class="error"></div>
                     </div>
                     <div class="input">
                         <label for="phone">PHONE NUMBER</label>
@@ -77,19 +78,46 @@
  <script>
     const firstName = document.getElementById("first_name");
     const nameErr = document.getElementById("nameError");
+    const email = document.getElementById("email");
+    const emailErr = document.getElementById("emailError");
     const pw = document.getElementById("password");
     const pwC = document.getElementById("confirm_pw");
-    const passwordCheck = document.getElementById("pwerror");
-    const passwordConfCheck = document.getElementById("pwcerror");
+    const pwCheck = document.getElementById("pwerror");
+    const pwConfCheck = document.getElementById("pwcerror");
 
     firstName.addEventListener('input', (e) => {
         if (firstName.value === "") {
-           nameErr.textContent = "Please enter your first name" 
+            firstName.style.borderColor = "red";
+            nameErr.textContent = "Please enter your first name" 
         } else {
+            firstName.style.borderColor = "green";
             nameErr.textContent = "";
         }
     });
     
+    email.addEventListener('input', (e) => {
+        if (email.validity.typeMismatch) {
+            email.style.borderColor = "red";
+            emailErr.textContent = "Invalid email. ex: johndoe@email.com"
+        } else {
+            email.style.borderColor = "green";
+            emailErr.textContent = "";
+        }
+    });
+
+    pwC.addEventListener("input", function (event) {
+      if (pwC.value !== pw.value) {
+        pw.style.borderColor = "red"
+        pwC.style.borderColor = "red"
+        pwCheck.textContent = 'Passwords do not match';
+      } else {
+        pw.style.borderColor = "green"
+        pwC.style.borderColor = "green"
+        pwCheck.textContent = '';
+      }
+    });
+    
+
 
  </script>   
 
